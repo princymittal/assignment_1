@@ -2,329 +2,272 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Schema;
 
-namespace assignment_1
+namespace Assignment_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            /* A1Q1 a1Q1 = new A1Q1();
-             a1Q1.function1();
-             Console.ReadLine();*/
-            /* A1Q2 a1Q2 = new A1Q2();
-             a1Q2.function2();
-             Console.ReadLine();*/
-            /* A1Q3 a1Q3 = new A1Q3();
-             a1Q3.function3();
-             Console.ReadLine(); */
-            /*  A1Q4 a1Q4 = new A1Q4();
-              a1Q4.function4();
-              Console.ReadLine();*/
-            /* A1Q5 a1Q5 = new A1Q5();
-             int[] r = a1Q5.function5();
-             foreach (int i in r)
-             {
-                 Console.Write(i+" ");
+            /*A2Q1 a1q1 = new A2Q1();
+            a1q1.function1();
+            Console.ReadLine();*/
 
-
-             }
-             Console.ReadLine();*/
+            /*A2Q2 a1q2 = new A2Q2();
+            a1q2.function2();
+            Console.ReadLine();*/
             /*
-                        A1Q6 a1Q6 = new A1Q6();
-                        int[] r = a1Q6.function6();
-                        foreach (int i in r)
-                        {
-                            Console.Write(i + " ");
-
-
-                        }
-                        Console.ReadLine();
-            *//*
-                        A1Q7 a1Q7 = new A1Q7();
-                        a1Q7.function7();
+                        ATM myATM = new ATM(5000); 
+                        myATM.function3();
                         Console.ReadLine();*/
 
 
-            /*A1Q8 a1Q8 = new A1Q8();
-            a1Q8.function8();
-            Console.ReadLine();*/
-
-
-            /* A1Q9 a1Q9 = new A1Q9();
-             int[] r = a1Q9.function9();
-             foreach (int i in r)
-             {
-                 Console.Write(i + " ");
-
-
-             }
+            /* A2Q4 a1q4 = new A2Q4();
+             a1q4.function4();
              Console.ReadLine();*/
-
-            A1Q10 a1Q10 = new A1Q10();
-            a1Q10.function10();
+            /*
+                        A2Q5 validator = new A2Q5();
+                        validator.function5();
+            
+                        Console.ReadLine(); */
+            A2Q6 a6 = new A2Q6();
+            a6.function6();
             Console.ReadLine();
 
-        }
 
-    }
-}
-/*class A1Q1
-{
-    private int size;
-    private int sum;
-    public void function1()
-    {
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a[i] = Convert.ToInt32(Console.ReadLine());
         }
-        for (int i = 0; i < size; i++)
-        {
-            sum += a[i];
+                }
+            }
+/*class A2Q1 {
+    public void function1() {
+        int size = Convert.ToInt32(Console.ReadLine());
+     decimal[] a = new decimal[size];
+        for (int i = 0; i < size; i++) {
+            a[i] = Convert.ToDecimal(Console.ReadLine());
+        }
+        decimal sum = 0;
+        foreach (int i in a) {
+            sum += i;
+        }
+        if (sum > 3000) {
+            sum = sum * 10 / 100;
         }
         Console.WriteLine(sum);
-    }
-}
+    } }
 */
-/*class A1Q2
+/*class A2Q2
 {
-    private int size;
-   
-    private float sum;
     public void function2()
     {
-        sum = 0.0f;
-        size = Convert.ToInt32(Console.ReadLine());
-        float[] a = new float[size];
-        
-        for (int i = 0; i < size; i++)
+        Console.Write("Enter the temperature in Celsius: ");
+        double c = Convert.ToDouble(Console.ReadLine());
+        double F = (c * 9 / 5) + 32;
+        Console.WriteLine("The temp in fahrenheit is" + F);
+        if (c < 0)
         {
-            a[i] = (float)Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Warning: The temperature is below freezing!");
         }
-        for (int i = 0; i < size; i++)
-        {
-            sum += a[i];
-        }
-        Console.WriteLine(sum / size);
     }
 }
 */
-/*class A1Q3
+
+/*class ATM
 {
-    private int size;
-    private int maxx;
+    private decimal balance;
+
+    public ATM(decimal initialBalance)
+    {
+        balance = initialBalance;
+    }
+
     public void function3()
     {
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
+        while (true)
         {
-            a[i] = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("1. Check Balance");
+            Console.WriteLine("2. Deposit Money");
+            Console.WriteLine("3. Withdraw Money");
+            Console.WriteLine("4. Exit");
+            Console.Write("Select an option (1-4): ");
+            int choice = Convert.ToInt32(Console.ReadLine());
 
-        }
-        maxx = a[0];
-        for (int i = 1; i < size; i++)
-        {
-            if (a[i] > maxx)
+            if (choice == 1)
             {
-                maxx = a[i];
+                CheckBalance();
             }
-           
-        }
-        Console.WriteLine(maxx);
-
-    }
-}*/
-/*class A1Q4 { 
-    private int even;
-    private int odd;
-    private int size;
-    public void function4() { 
-        size=Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a[i]=Convert.ToInt32(Console.ReadLine());    
-        }
-        for (int i = 0; i < size; i++)
-        {
-            if (a[i] % 2 != 0) {
-                odd++;
-            }
-            even++;
-        }
-        Console.WriteLine(odd);
-        Console.WriteLine(even);
-
-    }
-}*/
-/*class A1Q5
-{
-    private int l;
-    private int h;
-
-    private int size;
-    public int[] function5()
-    {
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a[i] = Convert.ToInt32(Console.ReadLine());
-        }
-         l = 0;
-         h = size - 1;
-        while (l < h)
-        {
-            int temp = a[l];
-            a[l] = a[h];
-            a[h] = temp;
-            l++;
-            h--;
-
-        }
-        return a;
-    }
-}
-*/
-
-/*class A1Q6
-{
-    private int factor;
-    private int h;
-
-    private int size;
-    public int[] function6()
-    {
-        factor = Convert.ToInt32(Console.ReadLine());
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a[i] = Convert.ToInt32(Console.ReadLine());
-        }
-        for (int i = 0; i < size; i++)
-        {
-            a[i] *= factor;
-        }
-        return a;
-    }
-}*/
-
-/*class A1Q7
-{
-    private int search;
-
-    private int size;
-    public void function7()
-    {
-        search = Convert.ToInt32(Console.ReadLine());
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a[i] = Convert.ToInt32(Console.ReadLine());
-        }
-        for (int i = 0; i < size; i++)
-        {
-            if (a[i] == search)
+            else if (choice == 2)
             {
-                Console.WriteLine("Index found");
+                DepositMoney();
+            }
+            else if (choice == 3)
+            {
+                WithdrawMoney();
+            }
+            else if (choice == 4)
+            {
+                Console.WriteLine("Thank you for using the ATM. Goodbye!");
+                return; //exit the current method
+            }
+            else
+            {
+                Console.WriteLine("Invalid option. Please select a valid option.");
             }
         }
-        Console.WriteLine("Index not found");
     }
-}*/
-/*class A1Q8
-{
 
-    private int size;
-    public void function8()
+    private void CheckBalance()
     {
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
+        Console.WriteLine($"\nYour current balance is: Rs. {balance}");
+    }
+
+    private void DepositMoney()
+    {
+        Console.Write("\nEnter the amount to deposit: Rs. ");
+        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
+        balance += depositAmount;
+        Console.WriteLine($"Your new balance is: Rs. {balance}");
+    }
+
+    private void WithdrawMoney()
+    {
+        decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
+
+        if (withdrawAmount <= balance)
         {
-            a[i] = Convert.ToInt32(Console.ReadLine());
-        }
-        Array.Sort(a);
-        int small = a[0];
-        int second = int.MaxValue;
-        for (int i = 0; i < size; i++) {
-            if (a[i] > small) { 
-                second = a[i];
-                break;
-            }
-        }
-        if (second== int.MaxValue)
-        {
-            Console.WriteLine("There is no second smallest element.");
+            balance -= withdrawAmount;
+            Console.WriteLine($"Your new balance is: Rs. {balance}");
         }
         else
         {
-            Console.WriteLine("The second smallest grade is: " + second);
+            Console.WriteLine("Error: Insufficient funds for this withdrawal.");
         }
-       
     }
-}*/
+}
 
-/*class A1Q9
-{
-    private int size;
-    public int function9()
-    {
-        size = Convert.ToInt32(Console.ReadLine());
-        int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a[i] = Convert.ToInt32(Console.ReadLine());
-        }
-        Array.Sort(a);  
-        int r = 1;
-        for (int i = 1; i < size; i++)
-        {
-            if (a[i] != a[i - 1])
-                a[r++] = a[i];
-        }
-        Array.Resize(ref a, r);
-        return r;
-        }  
-        }
 */
 
-class A1Q10
-{
-    private int size;
-    public void function10()
-    {
-        size = Convert.ToInt32(Console.ReadLine());
+/*class A2Q4 {
+    public void function4() {
+        int size = Convert.ToInt32(Console.ReadLine());
         int[] a = new int[size];
-        for (int i = 0; i < size; i++)
-        {
+        for (int i = 0; i < size; i++) {
             a[i] = Convert.ToInt32(Console.ReadLine());
         }
-        int[] a1 = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            a1[i] = Convert.ToInt32(Console.ReadLine());
+        int sum = 0;
+        foreach (int i in a) { 
+            sum+= i;    
         }
-        for (int i = 0; i < size; i++)
+        double avg = sum / size;
+        char grade;
+        if (avg >= 90) {
+            grade = 'A';
+        }
+        else if (avg >= 80)
         {
-            for (int j = 0; j < size; j++)
+            grade = 'B';
+        }
+        else if (avg >= 70)
+        {
+            grade = 'C';
+        }
+        else if (avg >= 60)
+        {
+            grade = 'D';
+        }
+        else
+        {
+            grade = 'F';
+        }
+        Console.WriteLine($"\nAvg marks: {avg}");
+        Console.WriteLine($"grade: {grade}");
+    }
+}
+*/
+/*class A2Q5
+{
+    public void function5()
+    {
+        String password = Console.ReadLine();
+        if (isValid(password))
+        {
+            Console.WriteLine("passwrod is valid");
+        }
+        else {
+            Console.WriteLine("password is invalid");
+       }
+}
+static bool isValid(string password) {
+        if (password.Length < 8)
+        {
+            return false;
+        }
+
+        bool hasUppercase = false;
+        bool hasLowercase = false;
+        bool hasDigit = false;
+
+        // Iterate through each character in the password
+        foreach (char c in password)
+        {
+            if (char.IsUpper(c))
             {
-                if (a[i] == a1[j])
-                {
-                    Console.Write(a[i] + " ");
-                    break;
-                }
+                hasUppercase = true;
+            }
+            else if (char.IsLower(c))
+            {
+                hasLowercase = true;
+            }
+            else if (char.IsDigit(c))
+            {
+                hasDigit = true;
+            }
+
+           
+            if (hasUppercase && hasLowercase && hasDigit)
+            {
+                return true;
             }
         }
+
+       
+        return false;
     }
+}
+   */
+
+/*class A2Q6
+{
+
+    public double fare;
+    public void function6()
+    {
+        double distance = Convert.ToDouble(Console.ReadLine());
+        float hour = Convert.ToSingle(Console.ReadLine());
+        int km = Convert.ToInt32(Console.ReadLine());
+        int flat = 20;
+        if (distance <= 2)
+        {
+            fare = flat;
+        }
+        else
+        {
+            fare = flat + (distance - 2) * km;
+        }
+        if (hour >= 10) {
+            fare += fare + 10;
+        }
+        Console.WriteLine(fare);
+    }
+}
+*/
+
+class A2Q7 {
+    bool[] a=new bool[5];
+    
+    
+
 }
